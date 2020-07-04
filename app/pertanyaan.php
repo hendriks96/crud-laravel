@@ -8,4 +8,6 @@ class pertanyaan extends Model
 {
     //
     protected $table = "pertanyaan";
+
+    public $timestamps = true;
 }

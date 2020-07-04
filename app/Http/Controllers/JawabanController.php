@@ -32,12 +32,6 @@ class JawabanController extends Controller
         $insertJawaban->id_pertanyaan = $pertanyaan_id;
         $insertJawaban->save();
 
-        $pertanyaan = pertanyaan::where('id_pertanyaan',$pertanyaan_id)->first();
-        $jawaban = jawaban::where('id_pertanyaan', $pertanyaan_id)->get();
-        // dd($pertanyaan);
-        $datas['pertanyaan'] = $pertanyaan->isi;
-        $datas['allJawaban'] = $jawaban;
-        $datas['pertanyaan_id'] = $pertanyaan->id_pertanyaan;
-        return view('tables-jawaban', $datas);
+        return redirect('/jawaban/'.$pertanyaan_id);
     }
 }

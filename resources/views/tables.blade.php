@@ -29,8 +29,11 @@
                             <td>
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <button class="btn btn-success btn-block" onclick='tojawaban({{$item->id_pertanyaan}})'>Answer</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary btn-block" onclick="toDetail({{$item->id_pertanyaan}})">View</button>
                                         </div>
                                     </div>
                                 </div>
@@ -72,13 +75,16 @@
 <!-- page script -->
 <script>
     function addPertanyaan(){
-        window.open('pertanyaan/create');
+        window.open('pertanyaan/create', '_self');
     }
 
     function tojawaban(id){
-        window.open('jawaban/'+id);
+        window.open('jawaban/'+id, '_self');
     }
-    // console.log('good');
+
+    function toDetail(id){
+        window.open('http://localhost/crud-laravel/public/pertanyaan/'+id, '_self');
+    }
   $(function () {
     $("#example1").DataTable({
       "responsive": true,

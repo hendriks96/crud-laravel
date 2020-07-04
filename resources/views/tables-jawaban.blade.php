@@ -65,7 +65,7 @@
 <!-- page script -->
 <script>
     function addJawaban(pertanyaan_id){
-        window.open('create/'+pertanyaan_id);
+        window.open('create/'+pertanyaan_id, '_self');
     }
     $(function () {
         $("#example1").DataTable({
